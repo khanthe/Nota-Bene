@@ -1,0 +1,407 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+body {
+  margin: 0 !important;
+}
+
+header {
+  background-color: #FF9E64;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  padding: 15px 0 18px 0;
+}
+
+header h1 {
+  margin: 0;
+  padding: 10px 0 0 55px;
+  font-size: 25px;
+  font-weight: 900;
+  position: relative;
+}
+
+header .ascii-logo {
+  color: #ff5e00;
+  font-weight: 300;
+  margin: 0 15px 0 0;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #453e3a;
+  position: absolute;
+  width: 75px;
+  height: 36px;
+  top: -7px;
+  left: 0;
+  font-size: 2.5rem;
+}
+
+header a {
+  text-decoration: none;
+  color: rgba(41, 41, 41, 0.87)
+}
+
+a.btn,
+button.btn {
+  background-color: #ff5e00;
+  border: 1px solid #4f4f4f;
+  color: rgba(41, 41, 41, 0.87);
+  cursor: pointer;
+  box-shadow: 3px 3px 0 0 #4f4f4f;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 6px 10px 5px 10px;
+  text-decoration: none;
+}
+
+a.btn:hover,
+button.btn:hover,
+a.btn:focus
+button.btn:focus {
+  background-color: #ff7221;
+  transition: .4s ease background-color;
+  text-decoration: underline;
+}
+
+.btn-icon {
+  font-weight: 900;
+  margin-right: 5px;
+}
+
+.btn.delete {
+  background-color:#ff4c4c;
+}
+
+.btn.delete:hover {
+  background-color:#ff6666;
+}
+
+header button.create-btn {
+  margin-right: 2em;
+  position: absolute;
+  top: 18px;
+  right: 10px;
+}
+
+header .subhead {
+  font-size: 12px;
+  letter-spacing: 0.035em;
+  margin-top: -5px;
+  display: block;
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.inner-header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.inner-header {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+}
+
+.app-version {
+  position: fixed;
+  bottom: 0;
+  right: 5px;
+  padding: 5px;
+}
+
+.rotated {
+  display: inline-block;
+  transform: rotate(152deg);
+  padding-top: 6px;
+  position: absolute;
+  top: -15px;
+  left: 29px;
+}
+
+.get-started {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  justify-content: flex-start;
+  height: 67vh;
+  padding-top: 33vh; 
+}
+
+.get-started div {
+  text-align: center;
+}
+
+.vertical {
+  flex-direction: column; 
+}
+
+.small-scale {
+  font-size: small;
+}
+
+.medium-scale {
+  font-size: medium;
+}
+
+.modal-overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  background: rgba(255, 255, 255, 0.75);
+  display: flex;
+  justify-content: center; 
+  align-items: flex-start; 
+  z-index: 1000; 
+  overflow-y: scroll;
+}
+
+.modal-container {
+  background: #ffffff;
+  border: 2px solid #4f4f4f;
+  box-shadow: 5px 5px 0 0 #4f4f4f;
+  padding: 30px 20px;
+  position: relative;
+  max-width: 800px;
+  text-align: center;
+  width: 100%;
+  margin: 20vh 0 10vh 0;
+}
+
+.modal-container.create-note-modal {
+  width: 400px;
+}
+
+.modal-container h2 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin: 35px 0 25px 0;
+}
+
+.modal-container button.btn {
+  margin: 5px 10px;
+}
+
+input[type=text],
+textarea {
+  display: block;
+  margin: 5px auto 15px auto;
+}
+
+.modal-container input[type=text],
+.modal-container input[type=text]:focus {
+  background: #ffffff;
+  border-width: 0 0 1px 0;
+  color: #171717;
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  outline: none;
+  width: 80%;
+}
+
+.modal-container input::placeholder {
+  color: #8a8a8a;
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.modal-container textarea,
+.modal-container textarea:focus {
+  background: #ffffff;
+  border-width: 0;
+  color: #171717;
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  min-height: 50vh;
+  outline: none;
+  width: 80%; 
+  scrollbar-color: #4f4f4f #ffffff;
+  scrollbar-width: thin;
+}
+
+.btn-close {
+  font-size: 1.2rem;
+  position: absolute;
+  right: 7px;
+  top: 7px;
+}
+
+body div#root main .btn-secondary {
+  background: inherit;
+  border: 0;
+  box-shadow: none;
+  color: #000;
+  cursor: pointer;
+  font-weight: 200;
+}
+
+body div#root main .btn-secondary:hover,
+body div#root main .btn-secondary:focus {
+  color: #ff5e00;
+  outline: 1px solid #ff5e00
+}
+
+.note-list {
+  display: grid;
+  margin: 40px 0;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.note-item {
+  background: #ffffff;
+  border: 1px solid #333333;
+  box-shadow: 5px 5px 0 0 #4f4f4f;
+  height: 200px;
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.note-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px; /* Height of the fade effect */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #eeeeee); 
+}
+
+.note-item-hoverlay {
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  display: none;
+  cursor:pointer;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+}
+
+.note-item:hover .note-item-hoverlay {
+  display: block;
+}
+
+.note-item-hoverlay a.btn {
+  display: inline-block;
+  margin-top: 95px;
+}
+
+.note-item h2 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin: 0 0 10px 0;
+}
+
+ul.list-note {
+  list-style-type: none;
+  padding: 1rem 2.2rem 1rem 2rem;
+}
+
+ul.list-note li {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+ul.list-note li button.status-toggle {
+  background-color: inherit;
+  border: 0;
+  box-shadow: none;
+  flex-shrink: 0; 
+  margin: 0 1rem 0 0;
+  padding: 0 0 10px 0;
+}
+
+ul.list-note li button.status-toggle:before,
+ul.list-note li button.status-toggle:after {
+  font-size: 40px; 
+  font-weight: 900;
+}
+
+ul.list-note li button.status-toggle.active:before {
+  content: "\2610"; 
+}
+
+ul.list-note li button.status-toggle.complete:before {
+  content: "\2611";
+  color:#929292
+}
+
+ul.list-note li:hover button.remove {
+  visibility: visible;
+}
+
+ul.list-note li button.remove {
+  flex-shrink: 0;
+  font-size: 1rem;
+  margin: 0 0 0 0.5rem;
+  padding: 0.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  visibility: hidden;
+}
+
+div.modal-container button.add-item {
+  display: block;
+  margin: 0.3rem auto 0 2.6rem; 
+}
+
+ul.list-note li input {
+  flex-grow: 1;
+  padding: 5px; 
+}
+
+.modal-container ul.list-note input[type="text"] {
+  border-color: #d4d4d4;
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  padding: 5px 40px 5px 5px;
+}
+
+.modal-container ul.list-note input[type="text"].complete {
+  color:#929292;
+  text-decoration: line-through;
+}
+
+.dashboard .note-content {
+  text-align: left;
+}
+
+.dashboard h2 {
+  text-align: center;
+}
+
+.dashboard .note-item li.complete {
+  color: #929292;
+  text-decoration: line-through;
+}
