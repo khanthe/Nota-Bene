@@ -320,6 +320,12 @@ body div#root main .btn-secondary:focus {
   margin: 0 0 10px 0;
 }
 
+.note-list-archived .note-item {
+  box-shadow: 5px 5px 0 0 #999999;
+  border-color: #999999;
+  color: #8b8b8b;
+}
+
 ul.list-note {
   list-style-type: none;
   padding: 1rem 2.2rem 1rem 2rem;
@@ -393,11 +399,17 @@ ul.list-note li input {
   text-decoration: line-through;
 }
 
+.dashboard h2 {
+  padding-top: 2rem;
+  border-bottom: 1px solid #000;
+  text-transform: capitalize;
+}
+
 .dashboard .note-content {
   text-align: left;
 }
 
-.dashboard h2 {
+.dashboard h3 {
   text-align: center;
 }
 

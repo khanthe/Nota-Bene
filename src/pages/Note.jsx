@@ -20,6 +20,7 @@ const NotePage = () => {
             const note = getFromLocalStorage(id);
             if (note) {
                 setTitle(note.title);
+                setStatus(note.status);
                 if (note.type === "list") {
                     setListItems(note.listItems);
                     setNoteType("list");
@@ -40,7 +41,8 @@ const NotePage = () => {
                 content: content.trim(),
                 listItems: listItems,
                 type: noteType,
-                status: status
+                status: status,
+                lastModified: new Date().toISOString()
             }
             
             saveNoteToLocalStorage(noteData, id);
