@@ -69,12 +69,28 @@ button.btn:focus {
   margin-right: 5px;
 }
 
-.btn.delete {
-  background-color:#ff4c4c;
+button.btn.util {
+  background-color: #ffffff;
 }
 
-.btn.delete:hover {
-  background-color:#ff6666;
+button.btn.util.pin:hover {
+  background-color: #a5f4b9;
+}
+
+.btn.util.pin.pinned {
+  background-color: #5eac72;
+}
+
+button.btn.util.archive:hover {
+  background-color: #d9d9d9;
+}
+
+.btn.util.archive.archived {
+  background-color: #c1c1c1;
+}
+
+.btn.util.delete:hover {
+  background-color:#ff4c4c;;
 }
 
 header button.create-btn {

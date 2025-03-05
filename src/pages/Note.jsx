@@ -12,7 +12,7 @@ const NotePage = () => {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [listItems, setListItems] = useState([]);
-    const [status, setStatus] = useState("Active");
+    const [status, setStatus] = useState("active");
     const [loading, setLoading] = useState(true);  
 
     useEffect(() => {
@@ -49,6 +49,10 @@ const NotePage = () => {
 
         }
         navigate("/");
+    }
+
+    const handleStatusUpdate = (statusToSet) => {
+        setStatus(statusToSet === status ? 'active' : statusToSet);
     }
 
     const handleDelete = () => {
@@ -128,11 +132,12 @@ const NotePage = () => {
                     onChangeFunc={(e) => setTitle(e.target.value)}
                 />
 
-                {/* {renderNoteContent()} */}
                 {loading ? <p>Loading...</p> : renderNoteContent()}
                 <div className="modal-footer">
                     <Button onClick={handleClose}>Save & Close</Button>
-                    { id && <Button onClick={handleDelete} buttonClass="delete">Delete</Button> }
+                    { id && <Button onClick={()=>handleStatusUpdate('pinned')} buttonClass={`util pin ${status.toLowerCase()}`}>Pin</Button> }
+                    { id && <Button onClick={()=>handleStatusUpdate('archived')} buttonClass={`util archive ${status}`}>Archive</Button> }
+                    { id && <Button onClick={handleDelete} buttonClass="util delete">Delete</Button> }
                 </div>
             </Modal>              
         </>

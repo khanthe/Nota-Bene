@@ -9,9 +9,9 @@ const NoteList = ({noteList}) => {
         const pinned = [], active = [], archived = [];
     
         for (let note of notes) {
-            if (note.status === "Pinned") {
+            if (note.status === "pinned") {
                 pinned.push(note);
-            } else if (note.status === "Archived") {
+            } else if (note.status === "archived") {
                 archived.push(note);
             } else {
                 active.push(note);
@@ -46,7 +46,6 @@ const NoteList = ({noteList}) => {
 
         return (
             <>
-                <h2>{category}</h2>
                 <div className={`note-list note-list-${category}`}>
                     {notes.map((note) => (
                         <div key={note.id} className="note-item">
@@ -65,12 +64,20 @@ const NoteList = ({noteList}) => {
     };
 
     const noteListSorted = sortNotes(noteList);
-    console.log(noteListSorted);
 
     return (
         <>
+                    {noteListSorted.pinnedNotes.length !==0 && (
+                        <h2>Pinned Notes</h2>
+                    )}
                     {renderNotes(noteListSorted.pinnedNotes, 'pinned')}
+                    {noteListSorted.activeNotes.length !==0 &&  (noteListSorted.pinnedNotes.length !==0 || noteListSorted.archivedNotes.length != 0) &&
+                        <h2>Active Notes</h2>
+                    }
                     {renderNotes(noteListSorted.activeNotes, 'active')}
+                    {noteListSorted.archivedNotes.length !==0 && (
+                        <h2>Archived Notes</h2>
+                    )}
                     {renderNotes(noteListSorted.archivedNotes, 'archived')}
                     {noteListSorted.pinnedNotes.length === 0 && noteListSorted.activeNotes.length === 0 && noteListSorted.archivedNotes.length === 0 && (
                         <p>No notes available.</p>
